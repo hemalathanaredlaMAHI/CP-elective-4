@@ -7,4 +7,7 @@
 
 def islegaltriangle(s1, s2, s3):
 	# your code goes here
-	pass
+	m=max(s1,s2,s3)
+	if((s1+s2+s3-m)>m):
+		return True
+	return False
