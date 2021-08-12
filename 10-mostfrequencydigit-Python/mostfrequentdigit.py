@@ -4,4 +4,20 @@
 
 def mostfrequentdigit(n):
 	# your code goes here
-	pass
+	d=dict()
+	while(n>0):
+		r=n%10
+		if r in d:
+			d[r]+=1
+		else:
+			d[r]=1
+		n//=10
+	m=0
+	r=0
+	d=dict(sorted(d.items()))
+	for i in d:
+		if(d[i]>m):
+			m=d[i]
+			r=i
+	return r
+
