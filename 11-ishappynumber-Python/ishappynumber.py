@@ -16,7 +16,25 @@
 # assert(ishappynumber(98) == False)
 # assert(ishappynumber(404) == True)
 # assert(ishappynumber(405) == False)
+def ishappy(a):
+	s=0
+	while(a>0):
+		r=a%10
+		s+=r*r
+		a//=10
+	return s
+
 
 def ishappynumber(n):
 	# your code goes here
-	pass
+	a=b=n
+	while(True):
+		a=ishappy(a)
+		b=ishappy(ishappy(b))
+		if(a==b):
+			break
+	if(a==1):
+		return True
+	else:
+		return False
+	
