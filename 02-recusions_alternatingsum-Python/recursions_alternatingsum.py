@@ -4,5 +4,16 @@
 # (that is, 3). If L is empty, return 0. You may not use loops/iteration in this problem.
 
 
+def alternatingsum(s,sum,n):
+	if(len(s)==0):
+		return sum
+	elif(n==1):
+		sum+=s[0]
+		return alternatingsum(s[1:],sum,-1)
+	elif(n==-1):
+		sum-=s[0]
+		return alternatingsum(s[1:],sum,1)
+
 def fun_recursions_alternatingsum(l): 
-	return 0
+	sum=0
+	return alternatingsum(l,sum,1)
