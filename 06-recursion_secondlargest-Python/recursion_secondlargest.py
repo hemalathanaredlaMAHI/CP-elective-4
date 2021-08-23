@@ -13,6 +13,17 @@
 # Again, you do not need to sort the list. We didn't sort it in our sample solution. We just tracked the two largest 
 # values as we recursively traversed the list. Also, you may not use loops/iteration in this problem
 
+def secondlargest(l,l1,l2):
+	if(len(l)==0):
+		return l2
+	else:
+		if(l[0]>=l1):
+			l2=l1
+			l1=l[0]
+		elif(l2<l[0]):
+			l2=l[0]
+	return secondlargest(l[1:],l1,l2)
 def recursion_secondlargest(L):
-	# Your code goes here
-	pass
+	if(len(L)==0 or len(L)==1):
+		return None
+	return secondlargest(L,-999999,-999999)
