@@ -17,5 +17,22 @@
 # }
 
 def movieAwards(oscarResults):
-    # Your code goes here...
-    pass
+    d={}
+    for i in oscarResults:
+        if(i[1] not in d):
+            d[i[1]]=1
+        else:
+            d[i[1]]+=1
+    s=sorted(d.items())
+    print(dict(s))
+
+
+movieAwards({ 
+    ("Best Picture", "The Shape of Water"), 
+    ("Best Actor", "Darkest Hour"),
+    ("Best Actress", "Three Billboards Outside Ebbing, Missouri"),
+    ("Best Director", "The Shape of Water"),
+    ("Best Supporting Actor", "Three Billboards Outside Ebbing, Missouri"),
+    ("Best Supporting Actress", "I, Tonya"),
+    ("Best Original Score", "The Shape of Water")
+})
