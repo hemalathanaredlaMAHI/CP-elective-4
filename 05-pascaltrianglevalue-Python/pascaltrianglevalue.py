@@ -9,4 +9,12 @@
 
 
 def fun_pascaltrianglevalue(row, col):
-	return 1
+	if(row<col or row<0 or col<0):
+		return 0
+	for line in range(1, row + 2):
+		c=1 
+		for i in range(1, line + 1):
+			if(i==col+1 and line==row+1):
+				return c
+			c=int(c*(line-i)/i)
+	
