@@ -8,6 +8,23 @@
 
 
 import math
-
+def iskaprekarnumber(n):
+    s=n**2
+    i=0
+    s1=0
+    while(s>0):
+        r=s%10
+        s1=s1+(r*(10**i))
+        i+=1
+        s=s//10
+        if(s+s1==n and s1!=0):
+            return True
+    return False
 def fun_nth_kaprekarnumber(n):
-    return 1;
+    c=0
+    f=0
+    while(f<=n):
+        c+=1
+        if(iskaprekarnumber(c)):
+            f+=1
+    return c
