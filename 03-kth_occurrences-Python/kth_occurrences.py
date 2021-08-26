@@ -5,6 +5,19 @@
 
 
 def fun_kth_occurrences(s, n):
-	return 'a'
+	d={}
+	for i in s:
+		if(i not in d):
+			d[i]=1
+		else:
+			d[i]+=1
+	
+	k=list(d.keys())
+	v=list(d.values())
+	x=sorted(d.values(),reverse=True)
+	r=v.index(x[n-1])
+	return (k[r])
+
+
 
 
