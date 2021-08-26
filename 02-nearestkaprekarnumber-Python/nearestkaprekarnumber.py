@@ -11,6 +11,30 @@
 
 
 import math
+def iskaprekarnumber(n):
+    s=n**2
+    i=0
+    s1=0
+    while(s>0):
+        r=s%10
+        s1=s1+(r*(10**i))
+        i+=1
+        s=s//10
+        if(s+s1==n and s1!=0):
+            return True
+    return False
 
 def fun_nearestkaprekarnumber(n):
+    a=n
+    b=n
+    if(iskaprekarnumber(n)):
+        return n
+    while(True):
+        a=a-1
+        b=b+1
+        if(iskaprekarnumber(a)):
+            return a
+        if(iskaprekarnumber(b)):
+            return b
+
     return 1
